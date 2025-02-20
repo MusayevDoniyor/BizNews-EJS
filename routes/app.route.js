@@ -13,4 +13,4 @@ appRouter.get("/contact", renderContact);
 appRouter.get("/category", renderCategory);
 appRouter.get("/single", renderSingle);
 
-module.exports = { appRouter };
+module.exports = appRouter;
