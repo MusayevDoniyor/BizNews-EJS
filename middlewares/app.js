@@ -68,6 +68,77 @@ app.use((req, res, next) => {
     ...res.locals.footerSocialIconscClass,
     "fa-google-plus-g",
   ];
+  res.locals.socialFollows = [
+    {
+      icon: "fa-facebook-f",
+      color: "#39569e",
+      darkColor: "rgba(0, 0, 0, 0.2)",
+      info: "12,345 Fans",
+    },
+    {
+      icon: "fa-twitter",
+      color: "#52aaf4",
+      darkColor: "rgba(0, 0, 0, 0.2)",
+      info: "12,345 Followers",
+    },
+    {
+      icon: "fa-linkedin-in",
+      color: "#0185ae",
+      darkColor: "rgba(0, 0, 0, 0.2)",
+      info: "12,345 Connects",
+    },
+    {
+      icon: "fa-instagram",
+      color: "#c8359d",
+      darkColor: "rgba(0, 0, 0, 0.2)",
+      info: "12,345 Followers",
+    },
+    {
+      icon: "fa-youtube",
+      color: "#dc472e",
+      darkColor: "rgba(0, 0, 0, 0.2)",
+      info: "12,345 Subscribers",
+    },
+    {
+      icon: "fa-vimeo-v",
+      color: "#055570",
+      darkColor: "rgba(0, 0, 0, 0.2)",
+      info: "12,345 Followers",
+    },
+  ];
+
+  res.locals.trendingNews = [
+    {
+      img: "img/news-110x110-1.jpg",
+      title: "Business",
+      date: "Jan 01, 2045",
+      description: "Lorem ipsum dolor sit amet elit...",
+    },
+    {
+      img: "img/news-110x110-2.jpg",
+      title: "Business",
+      date: "Jan 01, 2045",
+      description: "Lorem ipsum dolor sit amet elit...",
+    },
+    {
+      img: "img/news-110x110-3.jpg",
+      title: "Business",
+      date: "Jan 01, 2045",
+      description: "Lorem ipsum dolor sit amet elit...",
+    },
+    {
+      img: "img/news-110x110-4.jpg",
+      title: "Business",
+      date: "Jan 01, 2045",
+      description: "Lorem ipsum dolor sit amet elit...",
+    },
+    {
+      img: "img/news-110x110-5.jpg",
+      title: "Business",
+      date: "Jan 01, 2045",
+      description: "Lorem ipsum dolor sit amet elit...",
+    },
+  ];
 
   next();
 });
@@ -75,27 +146,42 @@ app.use((req, res, next) => {
 app.use("/", appRouter);
 
 app.use((req, res) => {
-  res.status(404).render("notFound", { title: "Page Not Found" });
+  res.status(404).render("layout", {
+    title: "Page Not Found",
+    body: "not-found",
+  });
 });
 
-const renderIndex = (req, res) => {
-  res.render("index", { title: "BizNews - News Portal" });
-};
+// const renderIndex = (req, res) => {
+//   res.render("layout", {
+//     title: "BizNews - News Portal",
+//     body: "index",
+//   });
+// };
 
-const renderContact = (req, res) => {
-  res.render("contact", { title: "BizNews - News Portal || Contact" });
-};
+// const renderContact = (req, res) => {
+//   res.render("layout", {
+//     title: "BizNews - News Portal || Contact",
+//     body: "contact",
+//   });
+// };
 
-const renderCategory = (req, res) => {
-  res.render("category", { title: "BizNews - News Portal || Category" });
-};
+// const renderCategory = (req, res) => {
+//   res.render("layout", {
+//     title: "BizNews - News Portal || Category",
+//     body: "category",
+//   });
+// };
 
-const renderSingle = (req, res) => {
-  res.render("single", { title: "BizNews - News Portal || Single" });
-};
+// const renderSingle = (req, res) => {
+//   res.render("layout", {
+//     title: "BizNews - News Portal || Single",
+//     body: "single",
+//   });
+// };
 
 module.exports = app;
-module.exports.renderIndex = renderIndex;
-module.exports.renderContact = renderContact;
-module.exports.renderCategory = renderCategory;
-module.exports.renderSingle = renderSingle;
+// module.exports.renderIndex = renderIndex;
+// module.exports.renderContact = renderContact;
+// module.exports.renderCategory = renderCategory;
+// module.exports.renderSingle = renderSingle;
